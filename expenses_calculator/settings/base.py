@@ -79,8 +79,8 @@ WSGI_APPLICATION = 'expenses_calculator.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test',
-        'USER': '',
+        'NAME': 'ppoombbai',
+        'USER': 'root',
         'PASSWORD': '',
         'HOST': '127.0.0.1',
         'PORT': '3306'
