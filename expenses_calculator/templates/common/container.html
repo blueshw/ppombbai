@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>카카오페이지 운영</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/admin_v2.css' %}">
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+</head>
+<body>
+<div class="headerInfo">
+    <div class="headerInfo_inner clearfix">
+        <div class="sec02 fltR center">
+            <div class="fltL">
+                <a href="/admin/logout" class="btn btn-default btn-sm">Sign Out</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="wrapper">
+    <div id="menuTree" class="fltL width200 paddingT">
+        {% include "common/menu.html" %}
+    </div>
+    <div id="subBlockMenu" class="fltL">
+        {% with kwargs=request.resolver_match.kwargs %}
+
+        {% include "common/section_list.html" with current_position=kwargs.position|add:0 current_section_uid=kwargs.section_uid|add:0 %}
+
+        {% endwith %}
+    </div>
+    <div id="contents" class="content">
+        {% block content %}default content{% endblock %}
+    </div>
+</div>
+
+<div id="footer" class="footer">
+    <span>PODOTREE INCORP.</span>
+</div>
+
+</body>
+</html>

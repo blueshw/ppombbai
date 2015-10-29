@@ -1,0 +1,9 @@
+{% for section in section_list %}
+    {% if section.position == current_position %}
+        {% if section.uid == current_section_uid %}
+            <div class="currentBoxMenu">{{ section.title }}</div>
+        {% else %}
+            <div class="boxMenu">{{ section.title }}</div>
+        {% endif %}
+    {% endif %}
+{% endfor %}
