@@ -16,31 +16,17 @@
 <div class="headerInfo">
     <div class="headerInfo_inner clearfix">
         <div class="sec02 fltR center">
-            <div class="fltL">
-                <a href="/admin/logout" class="btn btn-default btn-sm">Sign Out</a>
-            </div>
         </div>
     </div>
 </div>
 
 <div id="wrapper">
-    <div id="menuTree" class="fltL width200 paddingT">
-        {% include "common/menu.html" %}
-    </div>
-    <div id="subBlockMenu" class="fltL">
-        {% with kwargs=request.resolver_match.kwargs %}
-
-        {% include "common/section_list.html" with current_position=kwargs.position|add:0 current_section_uid=kwargs.section_uid|add:0 %}
-
-        {% endwith %}
-    </div>
     <div id="contents" class="content">
-        {% block content %}default content{% endblock %}
+        {% block content %}{% endblock %}
     </div>
 </div>
 
 <div id="footer" class="footer">
-    <span>PODOTREE INCORP.</span>
 </div>
 
 </body>
